@@ -1,0 +1,17 @@
+<div class="projects">
+    <div class="container py-2">
+        <div class="py-5">
+            <div class="blur"></div>
+            <span class="pills">Projects</span>
+            <div class="line"></div>
+        </div>
+        <ul id="cards" class="p-0 m-0">
+            <span *ngFor="let project of projects">
+                <app-project-card [topPosition]="project.topPosition" [title]="project.title"
+                    [badgeColors]="project.badgeColors" [tools]="project.tools" [myRole]="project.myRole"
+                    [description]="project.description">
+                </app-project-card>
+            </span>
+        </ul>
+    </div>
+</div>
