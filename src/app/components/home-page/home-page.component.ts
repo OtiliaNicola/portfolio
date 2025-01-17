@@ -1,12 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { HeroCardComponent } from '../../shared/hero-card/hero-card.component';
+
 
 @Component({
-  selector: 'app-home-page',
-  imports: [],
+  selector: 'app-homepage',
+  standalone: true,
+  imports: [CommonModule, RouterLink, HeroCardComponent],
   templateUrl: './home-page.component.html',
-  styleUrl: './home-page.component.scss'
+  styleUrl: './home-page.component.css'
 })
 export class HomePageComponent {
+  isNavOpen = false;
   downloadResume(): void {
     const resumePath = 'assets/SaurabhNaleResume.pdf';
 
