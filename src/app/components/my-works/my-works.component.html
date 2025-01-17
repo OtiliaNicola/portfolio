@@ -1,22 +1,22 @@
-<div class="section">
-    <div class="container py-lg-5">
-        <div
-            style="background-image: radial-gradient(circle, rgba(139,92,246,1) 0%, rgba(13,18,36,1) 100%); height: 2px;">
-        </div>
-
-        <div class="row text-center py-5">
-            <div class="col-sm-12">
-                <div class="blur"></div>
-                <span class="pills">Learning Ventures</span>
-                <div class="line"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let card of cardData">
-                <app-vertures-card [imageUrl]="card.imageUrl" [title]="card.title" [likes]="card.likes"
-                    [comments]="card.comments" [description]="card.description" [gitLink]="card.gitLink" [browserLink]="card.browserLink">
-                </app-vertures-card>
-            </div>
-        </div>
+<div class="row text-center py-5">
+    <div class="col-sm-12">
+        <div class="blur"></div>
+        <span class="pills">Learning Ventures</span>
+        <div class="line"></div>
     </div>
+</div>
+<div class="row">
+    @for (card of cardData; track card.title) {
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <app-ventures-card 
+                [imageUrl]="card.imageUrl" 
+                [title]="card.title" 
+                [likes]="card.likes"
+                [comments]="card.comments" 
+                [description]="card.description" 
+                [gitLink]="card.gitLink" 
+                [browserLink]="card.browserLink">
+            </app-ventures-card>
+        </div>
+    }
 </div>

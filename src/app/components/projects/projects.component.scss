@@ -1,81 +1,12 @@
-.projects {
-    background: #0d1224;
-    color: #fff;
-}
-
-.pills {
-    display: inline-block;
-    background: #1A1443;
-    padding: 5px 20px;
-    border-radius: 5px;
-    font-size: 24px;
-    color: white;
-}
-
-.line {
-    background: #1A1443;
-    height: 2px;
-    width: 100%;
-    margin: -25px auto 0;
-}
-
-.blur {
-    width: 3vw;
-    height: 3vw;
-    background-color: #E9D8FD;
-    border-radius: 50%;
-    position: absolute;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    filter: blur(3vw);
-    margin-top: 20px;
-}
-
-@media (min-width: 320px) and (max-width:767.98px) {
-    .blur {
-        width: 60VW;
-        filter: blur(20vw);
+.projects-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
     }
-
-    .cards {
-        padding: 0;
-        margin: 0;
-    }
-
-    .card {
-        width: 100%;
-        font-size: 14px;
-    }
-
-    .circle {
-        padding: 22px 16px;
-
-        .title {
-            font-size: 16px;
-        }
-    }
-
-}
-
-
-@media (min-width:768px) and (max-width: 1199.98px) {
-    .blur {
-        left: 10vw;
-        width: 35VW;
-        filter: blur(10vw);
-    }
-
-    .card {
-        width: 65%;
-        font-size: 14px;
-    }
-
-
-}
-
-@media (min-width: 1200px) and (max-width: 1599.98px) {
-    .blur {
-        left: 10%;
-    }
-
-}
+  }
+ 

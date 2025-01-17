@@ -1,41 +1,54 @@
-import { Component, HostListener } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
-import { HeroCardComponent } from '../../shared/hero-card/hero-card.component';
+import { Component } from "@angular/core";
+import { RouterOutlet } from "@angular/router";
+import { ExperiencesComponent } from "../experience/experience.component";
+import { SkillsComponent } from "../skills/skills.component";
+import { ProjectsComponent } from "../projects/projects.component";
+import { EducationsComponent } from "../educations/educations.component";
+import { MyWorksComponent } from "../my-works/my-works.component";
+import { ContactComponent } from "../contact/contact.component";
+import { PracticeComponent } from "../practice/practice.component";
+import { HeroCardComponent } from "../../shared/hero-card/hero-card.component";
+
 
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [CommonModule, RouterLink, HeroCardComponent],
-  templateUrl: './home-page.component.html',
-  styleUrl: './home-page.component.css'
+  imports: [
+    RouterOutlet,
+    ExperiencesComponent,
+    SkillsComponent,
+    ProjectsComponent,
+    EducationsComponent,
+    MyWorksComponent,
+    ContactComponent,
+    PracticeComponent,
+    HeroCardComponent
+  ],
+  templateUrl: './home-page.component.html'
 })
 export class HomePageComponent {
   isNavOpen = false;
-  downloadResume(): void {
-    const resumePath = 'assets/SaurabhNaleResume.pdf';
-
-    const link = document.createElement('a');
-    link.setAttribute('target', '_blank');
-    link.setAttribute('href', resumePath);
-    link.setAttribute('download', 'resume.pdf');
-
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
-  }
+  skills = [
+    'Angular', 'React', 'Ionic',
+    'HTML5', 'CSS3', 'SCSS',
+    'TypeScript', 'JavaScript',
+    'Bootstrap', 'Node JS',
+    'Express JS', 'SQL', 'Git'
+  ];
 
   toggleNav() {
     this.isNavOpen = !this.isNavOpen;
   }
-  @HostListener('document:touchstart', ['$event'])
-  closeNavOnClickOutside(event: TouchEvent) {
-    this.closeNav()
-  }
 
   closeNav() {
     this.isNavOpen = false;
+  }
+
+  downloadResume() {
+    const link = document.createElement('a');
+    link.href = 'assets/OtiliaNicolaResume.pdf';
+    link.download = 'OtiliaNicolaResume.pdf';
+    link.click();
   }
 }
