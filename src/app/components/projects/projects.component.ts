@@ -29,7 +29,7 @@ interface Education {
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent {
-  projects: Project[] = [
+  projects = [
     {
       title: 'Portfolio',
       description: 'Portafolio personal desarrollado con Angular 19, donde muestro mis proyectos y habilidades como desarrolladora Frontend.',

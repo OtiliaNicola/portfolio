@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ResourcesComponent } from './components/resources/resources.component';
@@ -16,7 +16,8 @@ import { HomePageComponent } from './components/home-page/home-page.component';
     SkillsComponent,
     ProjectsComponent,
     ResourcesComponent,
-    ContactComponent],
+    ContactComponent
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

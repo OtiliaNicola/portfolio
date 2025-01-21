@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { init, send } from '@emailjs/browser';
-import { CommonModule } from '@angular/common';
+import { send } from '@emailjs/browser';
+
 
 interface ContactInfo {
   icon: string;
@@ -18,6 +19,8 @@ interface ContactInfo {
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
+  private readonly fb = inject(FormBuilder);
+  private readonly toastr = inject(ToastrService);
   contactForm: FormGroup;
   isSubmitting = false;
 
@@ -48,10 +51,7 @@ export class ContactComponent {
     }
   ];
 
-  constructor(
-    private fb: FormBuilder,
-    private toastr: ToastrService
-  ) {
+  constructor() {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
