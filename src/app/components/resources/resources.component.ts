@@ -54,7 +54,7 @@ interface Resource {
       }
     </div>
   `,
-  styleUrls: ['./resources.component.css']
+  styleUrls: ['./resources.component.scss']
 })
 export class ResourcesComponent {
   resources: Resource[] = [
