@@ -1,0 +1,47 @@
+<div class="container">
+  <div
+    style="
+      background-image: radial-gradient(
+        circle,
+        rgba(139, 92, 246, 1) 0%,
+        rgba(13, 18, 36, 1) 100%
+      );
+      height: 2px;
+    "
+  ></div>
+  <div class="row text-center py-2">
+    <div class="col-sm-12">
+      <span class="pills">Skills</span>
+    </div>
+  </div>
+  <div class="h-100 m-auto">
+    <div class="row align-items-center">
+      <div class="logos">
+        <div class="logos-slide">
+          @for (skill of skills; track skill.name) {
+          <div class="skill">
+            <div class="gradient"></div>
+            <img
+              [src]="'assets/images/icons/skills/' + skill.icon"
+              [alt]="skill.name"
+            />
+            <p>{{ skill.name }}</p>
+          </div>
+          }
+        </div>
+        <div class="logos-slide">
+          @for (skill of skills; track skill.name) {
+          <div class="skill">
+            <div class="gradient"></div>
+            <img
+              [src]="'assets/images/icons/skills/' + skill.icon"
+              [alt]="skill.name"
+            />
+            <p>{{ skill.name }}</p>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
