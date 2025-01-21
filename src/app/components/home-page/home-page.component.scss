@@ -4,7 +4,7 @@
     width: auto;
     background: #0d1224;
     color: #fff;
-    background-image: url('src/assets/images/section.svg');
+    background-image: url('/assets/images/section.svg');
     background-size: auto 50%;
     background-repeat: no-repeat;
     background-position: center top;
@@ -81,13 +81,28 @@
     font-weight: 800;
 }
 
+.profile-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
+    img {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+      border: 3px solid #ec4899;
+      box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+    }
+  }
+
 .btn2 {
     background: linear-gradient(31deg, rgba(236, 72, 153, 1) 0%, rgba(117, 0, 251, 1) 97%);
     border-radius: 30px;
     border: none;
     height: 55px;
     width: 180px;
-    padding: 20px 20px;
+    // padding: 20px 20px;
     color: #fff;
     font-weight: 500;
     transition: width 0.3s;
