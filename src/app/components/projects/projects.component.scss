@@ -10,3 +10,92 @@
     }
   }
  
+  .background-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: #0d1224;
+    color: #fff;
+  }
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: auto;
+    z-index: 1;
+  }
+  
+  .pills {
+    display: inline-block;
+    background: #1A1443;
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-size: 24px;
+    color: white;
+  }
+  
+  .education-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .education-timeline {
+    background: #0d1224;
+    color: #fff;
+    border: 1px solid #2a2e5a;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    margin: 15px 10px;
+    cursor: pointer;
+    background-size: cover;
+    background-position: bottom;
+    &:before {
+      content: '';
+      background: linear-gradient(45deg, #2b0055, #4800ff, #6b00ff, #8b5cf6, #7209b7, #560bad, #480ca8, #3a0ca3, #3f37c9);
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      background-size: 400%;
+      z-index: -1;
+      filter: blur(5px);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      animation: glowing 20s linear infinite;
+      opacity: 0;
+      transition: opacity .3s ease-in-out;
+      border-radius: 10px;
+    }
+  
+    &:hover:before {
+      opacity: 1;
+    }
+  }
+  
+  .education-content {
+    padding: 20px;
+    h3 {
+      color: #8b5cf6;
+      margin-bottom: 10px;
+    }
+    h4 {
+      color: #ccbfbf;
+      margin-bottom: 8px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .education-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .education-grid {
+      grid-template-columns: 1fr;
+    }
+  }

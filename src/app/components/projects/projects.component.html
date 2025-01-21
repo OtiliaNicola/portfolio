@@ -1,17 +1,80 @@
-<div class="projects">
-    <div class="container py-2">
-        <div class="py-5">
-            <div class="blur"></div>
-            <span class="pills">Projects</span>
-            <div class="line"></div>
-        </div>
-        <ul id="cards" class="p-0 m-0">
-            <span *ngFor="let project of projects">
-                <app-project-card [topPosition]="project.topPosition" [title]="project.title"
-                    [badgeColors]="project.badgeColors" [tools]="project.tools" [myRole]="project.myRole"
-                    [description]="project.description">
-                </app-project-card>
-            </span>
-        </ul>
+<!-- <div class="projects-section">
+    @for (project of projects; track project) {
+      <app-project-card
+        [title]="project.title"
+        [badgeColors]="project.badgeColors"
+        [tools]="project.tools"
+        [myRole]="project.myRole"
+        [description]="project.description">
+      </app-project-card>
+    }
+</div>
+
+<div class="background-container">
+  <div class="container">
+    <div
+      style="
+        background-image: radial-gradient(
+          circle,
+          rgba(139, 92, 246, 1) 0%,
+          rgba(13, 18, 36, 1) 100%
+        );
+        height: 2px;
+      "
+    ></div>
+
+    <div class="row text-center py-5">
+      <div class="col-sm-12">
+        <span class="pills">Projects</span>
+      </div>
     </div>
+
+    <div class="row">
+        <div class="education-grid">
+          @for (edu of education; track edu.title) {
+            <div class="education-timeline">
+              <div class="education-content">
+                <h3>{{ edu.title }}</h3>
+                <h4>{{ edu.institution }}</h4>
+                <p class="period">{{ edu.period }}</p>
+                @if (edu.details) {
+                  @for (detail of edu.details; track detail) {
+                    <p>{{ detail }}</p>
+                  }
+                }
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+  </div>
+</div> -->
+
+<div class="background-container">
+  <div class="container">
+    <!-- Línea decorativa superior -->
+    <div style="background-image: radial-gradient(circle, rgba(139, 92, 246, 1) 0%, rgba(13, 18, 36, 1) 100%); height: 2px;"></div>
+
+    <!-- Título de la sección -->
+    <div class="row text-center py-5">
+      <div class="col-sm-12">
+        <span class="pills">Projects</span>
+      </div>
+    </div>
+
+    <!-- Grid de proyectos -->
+    <div class="projects-grid">
+      @for (project of projects; track project.title) {
+        <app-project-card
+          [title]="project.title"
+          [badgeColors]="project.badgeColors"
+          [tools]="project.tools"
+          [myRole]="project.myRole"
+          [description]="project.description"
+          [githubUrl]="project.githubUrl"
+          [demoUrl]="project.demoUrl">
+        </app-project-card>
+      }
+    </div>
+  </div>
 </div>

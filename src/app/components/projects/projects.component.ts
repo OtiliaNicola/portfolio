@@ -5,60 +5,86 @@ import { ProjectCardComponent } from '../../shared/project-card/project-card.com
 
 interface Project {
   title: string;
+  description: string;
   badgeColors: string[];
   tools: string[];
   myRole: string;
-  description: string;
-  githubUrl?: string;
-  demoUrl?: string;
+  githubUrl: string;
+  demoUrl: string;
+  topPosition?: string; // Añadido como opcional
+}
+
+interface Education {
+  title: string;
+  institution: string;
+  period: string;
+  details?: string[];
 }
 
 @Component({
   selector: 'app-projects',
   standalone: true,
   imports: [CommonModule, ProjectCardComponent],
-  template: `
-    <div class="container">
-      <div class="row text-center py-5">
-        <div class="col-sm-12">
-          <div class="blur"></div>
-          <span class="pills">Projects</span>
-          <div class="line"></div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-12">
-          <div class="projects-grid">
-            @for (project of projects; track project.title) {
-              <app-project-card
-                [title]="project.title"
-                [badgeColors]="project.badgeColors"
-                [tools]="project.tools"
-                [myRole]="project.myRole"
-                [description]="project.description"
-                [githubUrl]="project.githubUrl"
-                [demoUrl]="project.demoUrl">
-              </app-project-card>
-            }
-          </div>
-        </div>
-      </div>
-    </div>
-  `,
-  styleUrls: ['./projects.component.css']
+  templateUrl: './projects.component.html',
+  styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent {
   projects: Project[] = [
     {
-      title: 'Portfolio Website',
-      badgeColors: ['#ec4899', '#16f2b3'],
-      tools: ['Angular', 'TypeScript', 'Bootstrap', 'SCSS'],
+      title: 'Portfolio',
+      description: 'Portafolio personal desarrollado con Angular 19, donde muestro mis proyectos y habilidades como desarrolladora Frontend.',
+      badgeColors: ['#00DC82', '#41B883'],
+      tools: ['Angular', 'TypeScript', 'SCSS', 'Bootstrap'],
       myRole: 'Frontend Developer',
-      description: 'Personal portfolio website showcasing my projects and skills. Built with Angular and modern web technologies.',
-      githubUrl: 'https://github.com/otilianicola/portfolio',
-      demoUrl: 'https://otilianicola.github.io/portfolio'
+      githubUrl: 'https://github.com/OtiliaNicola/portfolio',
+      demoUrl: ''
     },
-    // Añade aquí tus otros proyectos
+    {
+      title: 'IOS Calculator',
+      description: 'Calculadora inspirada en iOS, desarrollada con JavaScript vanilla, HTML y CSS.',
+      badgeColors: ['#FFA500', '#FFD700'],
+      tools: ['JavaScript', 'HTML', 'CSS'],
+      myRole: 'Frontend Developer',
+      githubUrl: 'https://github.com/OtiliaNicola/ios_calculator',
+      demoUrl: 'https://ios-calculator-gamma.vercel.app/'
+    },
+    {
+      title: 'Space Tourism',
+      description: 'Proyecto Frontend Mentor de turismo espacial, desarrollado con React.',
+      badgeColors: ['#61DAFB', '#282C34'],
+      tools: ['React', 'JavaScript', 'CSS'],
+      myRole: 'Frontend Developer',
+      githubUrl: 'https://github.com/OtiliaNicola/space-tourism',
+      demoUrl: 'https://space-tourism-sepia-mu.vercel.app/'
+    }
+  ];
+
+  education: Education[] = [
+    {
+      title: 'Curso Fullstack Development Bootcamp',
+      institution: 'Adalab',
+      period: 'Marzo - Junio 2024',
+      details: [
+        'Desarrollo de aplicaciones web responsive usando HTML, CSS, JavaScript y React.',
+        'Backend con Node.js, Express y MySQL.',
+        'Control de versiones con Git.',
+        'Proyectos colaborativos utilizando filosofía Agile y Scrum.'
+      ]
+    },
+    {
+      title: 'Curso Angular de Cero a Experto',
+      institution: 'Udemy',
+      period: 'Agosto 2024',
+      details: [
+        'Fundamentos y arquitecturas de Angular',
+        'Creación de componentes y servicios',
+        'Manejo de formularios y directivas'
+      ]
+    },
+    {
+      title: 'FP Superior de Administración y Finanzas',
+      institution: 'Centro Cultural Salmantino',
+      period: 'Madrid (2021 - 2023)'
+    }
   ];
 }
