@@ -1,151 +1,100 @@
-// // src/app/shared/project-card/project-card.component.scss
-// .project-card {
-//   $self: &;
-//   background: var(--card-background);
-//   border: 1px solid rgba(255, 255, 255, 0.1);
-//   border-radius: 12px;
-//   padding: 1.5rem;
-//   transition: transform 0.3s ease;
-  
-//   &:hover {
-//     transform: translateY(-5px);
-//   }
+@use "../../../theme/variables" as *;
 
-//   &__header {
-//     margin-bottom: 1.5rem;
-
-//     h3 {
-//       color: var(--primary-color);
-//       font-size: 1.25rem;
-//       margin-bottom: 1rem;
-//     }
-
-//     .badge-list {
-//       display: flex;
-//       gap: 0.5rem;
-
-//       .badge {
-//         width: 12px;
-//         height: 12px;
-//         border-radius: 50%;
-//       }
-//     }
-//   }
-
-//   &__body {
-//     .tools-list {
-//       display: flex;
-//       flex-wrap: wrap;
-//       gap: 0.5rem;
-//       margin-bottom: 1rem;
-
-//       .tool {
-//         background: rgba(255, 255, 255, 0.1);
-//         color: var(--secondary-color);
-//         padding: 0.25rem 0.75rem;
-//         border-radius: 15px;
-//         font-size: 0.875rem;
-//       }
-//     }
-
-//     .role {
-//       color: var(--text-color-secondary);
-//       margin-bottom: 1rem;
-//       font-size: 0.9rem;
-
-//       strong {
-//         color: var(--text-color);
-//       }
-//     }
-
-//     .description {
-//       color: var(--text-color);
-//       line-height: 1.6;
-//       margin-bottom: 1.5rem;
-//     }
-//   }
-
-//   &__footer {
-//     display: flex;
-//     gap: 1rem;
-
-//     .btn {
-//       display: inline-flex;
-//       align-items: center;
-//       gap: 0.5rem;
-//       padding: 0.5rem 1rem;
-//       border-radius: 6px;
-//       font-size: 0.9rem;
-//       transition: all 0.3s ease;
-//       text-decoration: none;
-
-//       &:hover {
-//         transform: translateY(-2px);
-//       }
-
-//       &--github {
-//         background: var(--primary-color);
-//         color: white;
-//       }
-
-//       &--demo {
-//         border: 1px solid var(--primary-color);
-//         color: var(--text-color);
-//       }
-
-//       i {
-//         font-size: 1rem;
-//       }
-//     }
-
-//     @media (max-width: 768px) {
-//       flex-direction: column;
-
-//       .btn {
-//         width: 100%;
-//         justify-content: center;
-//       }
-//     }
-//   }
-// }
 
 .project-card {
-  background: #0d1224;
+  background: var(--background-color);
   border-radius: 10px;
   padding: 20px;
   margin: 15px;
-  border: 1px solid #2a2e5a;
+  border: 1px solid var(--border-color);
   transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
 
   &:hover {
     transform: translateY(-5px);
+    border-color: var(--hover-color);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+      45deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+    z-index: -1;
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
   h3 {
-    color: #8b5cf6;
+    color: var(--hover-color);
     margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+
+  p {
+    color: var(--text-color-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.6;
   }
 
   .badge {
-    background: #2a2e5a;
+    background: var(--border-color);
     padding: 5px 10px;
     border-radius: 15px;
     margin-right: 10px;
+    font-size: 0.85rem;
+    color: var(--text-color);
+  }
+
+  .tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
   }
 
   .links {
     margin-top: 20px;
-    
+    display: flex;
+    gap: 1rem;
+
     a {
-      margin-right: 10px;
       padding: 8px 15px;
       border-radius: 5px;
-      background: #8b5cf6;
+      background: var(--hover-color);
       color: white;
       text-decoration: none;
-      
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+
       &:hover {
-        background: #7c3aed;
+        background: var(--hover-color-dark);
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    .links {
+      flex-direction: column;
+
+      a {
+        text-align: center;
       }
     }
   }
