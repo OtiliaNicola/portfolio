@@ -1,0 +1,15 @@
+{
+  "NAV": {
+    "SKILLS": "Skills",
+    "PROJECTS": "Projects",
+    "LEARNING_PATH": "My Learning Path",
+    "TIPS": "Tips",
+    "CONTACT": "Contact Me"
+  },
+  "HOME": {
+    "TITLE": "Hello, I'm a Junior Front-end Developer",
+    "DESCRIPTION": "I currently collaborate as a freelancer for a StartUp...",
+    "CONTACT_BTN": "CONTACT ME",
+    "DOWNLOAD_CV": "DOWNLOAD CV"
+  }
+}

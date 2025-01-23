@@ -1,0 +1,15 @@
+{
+  "NAV": {
+    "SKILLS": "Habilidades",
+    "PROJECTS": "Proyectos",
+    "LEARNING_PATH": "Mi Ruta de Aprendizaje",
+    "TIPS": "Consejos",
+    "CONTACT": "Contacto"
+  },
+  "HOME": {
+    "TITLE": "Hola, Soy Desarrolladora Front-end Junior",
+    "DESCRIPTION": "Actualmente colaboro como freelancer para una StartUp...",
+    "CONTACT_BTN": "CONTÁCTAME",
+    "DOWNLOAD_CV": "DESCARGAR CV"
+  }
+}
