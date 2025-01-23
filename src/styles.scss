@@ -12,6 +12,8 @@
 @forward 'app/components/resources/resources.component';
 @forward 'app/shared/project-card/project-card.component';
 
+@use 'atropos/scss';
+
 * {
   margin: 0;
   padding: 0;
@@ -23,6 +25,10 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
+}
+
+.container {
+  min-height: 320px !important;
 }
 
 .pills {
