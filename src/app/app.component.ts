@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SkillsComponent } from './components/skills/skills.component';
-import { ProjectsComponent } from './components/projects/projects.component';
-import { ResourcesComponent } from './components/resources/resources.component';
+import { Component } from '@angular/core';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { ResourcesComponent } from './components/resources/resources.component';
+import { SkillsComponent } from './components/skills/skills.component';
 import { TipsComponent } from './components/tips/tips.component';
-import { TranslocoDirective, TranslocoService } from '@jsverse/transloco';
+import { TranslocoHttpLoader } from './transloco-loader';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,7 @@ import { TranslocoDirective, TranslocoService } from '@jsverse/transloco';
     ResourcesComponent,
     TipsComponent,
     ContactComponent,
-    TranslocoDirective
+    TranslocoModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],

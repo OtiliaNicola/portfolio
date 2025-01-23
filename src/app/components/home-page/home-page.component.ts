@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, input } from '@angular/core';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import JSConfetti from 'js-confetti';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslocoModule],
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
 })
@@ -14,7 +15,11 @@ export class HomePageComponent {
   isNavOpen = false;
   private jsConfetti: JSConfetti;
 
-  constructor() {
+  constructor(private readonly translocoService: TranslocoService) {
+    console.log(translocoService.getTranslation('en'));
+    console.log(translocoService.translate('NAV.SKILLS'));
+    
+    
     this.jsConfetti = new JSConfetti();
   }
 
