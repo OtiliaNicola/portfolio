@@ -1,26 +1,27 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { send } from '@emailjs/browser';
-
-
-interface ContactInfo {
-  icon: string;
-  text: string;
-  link?: string;
-}
+import { ContactInfo } from '../../core/interfaces/contact-info.interface';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
   private readonly fb = inject(FormBuilder);
   private readonly toastr = inject(ToastrService);
+
   contactForm: FormGroup;
   isSubmitting = false;
 
@@ -28,27 +29,27 @@ export class ContactComponent {
     {
       icon: 'mail.svg',
       text: 'otilianicola94@gmail.com',
-      link: 'mailto:otilianicola94@gmail.com'
+      link: 'mailto:otilianicola94@gmail.com',
     },
     {
       icon: 'map.svg',
-      text: 'Madrid, España'
+      text: 'Madrid, España',
     },
     {
       icon: 'git.svg',
       text: 'GitHub',
-      link: 'https://github.com/otilianicola'
+      link: 'https://github.com/otilianicola',
     },
     {
       icon: 'linkdin.svg',
       text: 'Linkedin',
-      link: 'https://linkedin.com/in/otilianicola'
+      link: 'https://linkedin.com/in/otilianicola',
     },
     {
       icon: 'x.svg',
       text: 'X',
-      link: 'https://x.com/OtiliaNicola'
-    }
+      link: 'https://x.com/OtiliaNicola',
+    },
   ];
 
   constructor() {
@@ -56,7 +57,7 @@ export class ContactComponent {
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       subject: ['', Validators.required],
-      message: ['', Validators.required]
+      message: ['', Validators.required],
     });
   }
 
@@ -73,7 +74,7 @@ export class ContactComponent {
           },
           'YOUR_PUBLIC_KEY'
         );
-        
+
         this.toastr.success('Mensaje enviado correctamente!');
         this.contactForm.reset();
       } catch (error) {
