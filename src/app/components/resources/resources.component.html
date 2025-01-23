@@ -1,1 +1,70 @@
-<p>resources works!</p>
+<div class="container">
+    <div
+      style="
+        background-image: radial-gradient(
+          circle,
+          rgba(139, 92, 246, 1) 0%,
+          rgba(13, 18, 36, 1) 100%
+        );
+        height: 2px;
+      "
+    ></div>
+
+  <div class="row text-center py-4">
+    <div class="col-sm-12">
+      <span class="pills">My Learning Path</span>
+    </div>
+  </div>
+
+  <div class="resource-section">
+    <h3 class="category-title">Learning Platforms</h3>
+    <div class="resources-grid">
+      @for (resource of learningPlatforms; track resource.title) {
+        <div class="resource-card" [class]="resource.academy">
+          <div class="resource-icon">
+            <img [src]="resource.icon" [alt]="resource.title">
+          </div>
+          <div class="resource-content">
+            <h4>{{ resource.title }}</h4>
+            <p>{{ resource.description }}</p>
+            <div class="resource-footer">
+              <span class="resource-type">{{ resource.academy }}</span>
+              <a [href]="resource.link" target="_blank">
+                Visit Resource
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Practice Section -->
+  <div class="resource-section">
+    <h3 class="category-title">Practice</h3>
+    <div class="resources-grid">
+      @for (resource of practiceResources; track resource.title) {
+        <div class="resource-card practice">
+          <div class="practice-logo">
+            <img [src]="resource.image" [alt]="resource.title">
+          </div>
+          <div class="resource-content">
+            <h4>{{ resource.title }}</h4>
+            <p>{{ resource.description }}</p>
+            <div class="resource-footer">
+              <a [href]="resource.link" target="_blank">
+                Visit Resource
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div></div>
+</div>
+
+ 
