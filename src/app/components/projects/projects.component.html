@@ -1,0 +1,47 @@
+<div class="background-container">
+  <div class="container">
+    <div
+      style="
+        background-image: radial-gradient(
+          circle,
+          rgba(139, 92, 246, 1) 0%,
+          rgba(13, 18, 36, 1) 100%
+        );
+        height: 2px;
+      "
+    ></div>
+    <div class="row text-center py-4">
+      <div class="col-sm-12">
+        <span class="pills">Projects</span>
+      </div>
+    </div>
+    <!-- Grid de proyectos -->
+    <div class="projects-grid">
+      @for (project of projects; track project.title; let i = $index) {
+      <app-project-card
+        class="myAtropos_{{ i }}"
+        [title]="project.title"
+        [badgeColors]="project.badgeColors"
+        [tools]="project.tools"
+        [myRole]="project.myRole"
+        [description]="project.description"
+        [githubUrl]="project.githubUrl"
+        [demoUrl]="project.demoUrl"
+      >
+      </app-project-card>
+      }
+    </div>
+    <div class="hero-button py-4 d-flex justify-content-center">
+      <a
+        href="https://github.com/OtiliaNicola?tab=repositories"
+        class="mx-2"
+        target="_blank"
+      >
+        <button class="btn py-3">
+          VIEW MORE
+          <img src="assets/images/icons/arrow-right.svg" alt="" class="mb-1" />
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
