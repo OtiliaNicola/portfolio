@@ -1,42 +1,30 @@
 @use "../../../theme/variables" as *;
 
-
-.project-card {
-  background: var(--background-color);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 15px;
-  border: 1px solid var(--border-color);
+.project-card-wrapper {
+  padding: 1px;
+  margin: 5px;
+  border-radius: 12px;
+  background: linear-gradient(
+    17deg,
+    rgb(0, 255, 163) 7%,
+    rgb(220, 31, 255) 100%
+  );
   transition: transform 0.3s ease;
-  position: relative;
-  overflow: hidden;
 
   &:hover {
     transform: translateY(-5px);
-    border-color: var(--hover-color);
-
-    &::before {
-      opacity: 1;
-    }
   }
+}
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(
-      45deg,
-      var(--primary-color),
-      var(--secondary-color)
-    );
-    z-index: -1;
-    border-radius: 12px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
+.project-card {
+  background: var(--background-color);
+  border-radius: 11px;
+  padding: 20px;
+  margin: 0;
+  border: none;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
 
   h3 {
     color: var(--hover-color);
@@ -48,6 +36,12 @@
     color: var(--text-color-secondary);
     margin-bottom: 1rem;
     line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 3.2rem;
   }
 
   .badge {
@@ -63,25 +57,30 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin: 1rem 0;
+    margin: auto 0 1rem 0;
   }
 
   .links {
-    margin-top: 20px;
+    margin-top: auto;
     display: flex;
     gap: 1rem;
 
     a {
       padding: 8px 15px;
-      border-radius: 5px;
-      background: var(--hover-color);
+      border-radius: 30px;
+      background: linear-gradient(
+        17deg,
+        rgb(0, 255, 163) 7%,
+        rgb(220, 31, 255) 100%
+      );
       color: white;
       text-decoration: none;
       font-size: 0.9rem;
       transition: all 0.3s ease;
 
       &:hover {
-        background: var(--hover-color-dark);
+        background: var(--background-color);
+        border-radius: 1px solid;
         transform: translateY(-2px);
       }
     }

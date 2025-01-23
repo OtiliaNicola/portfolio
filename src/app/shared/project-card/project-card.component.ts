@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -6,15 +6,14 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './project-card.component.html',
-  styleUrls: ['./project-card.component.scss']
+  styleUrls: ['./project-card.component.scss'],
 })
 export class ProjectCardComponent {
-  @Input() topPosition = '0';
-  @Input() title = '';
-  @Input() badgeColors: string[] = [];
-  @Input() tools: string[] = [];
-  @Input() myRole = '';
-  @Input() description = '';
-  @Input() githubUrl = '';
-  @Input() demoUrl = '';
+  title = input<string>();
+  badgeColors = input.required<string[]>();
+  tools = input.required<string[]>();
+  myRole = input.required<string>();
+  description = input.required<string>();
+  githubUrl = input<string>();
+  demoUrl = input<string>();
 }

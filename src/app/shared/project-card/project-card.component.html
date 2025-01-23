@@ -1,0 +1,34 @@
+<div class="atropos myAtropos">
+  <!-- Atropos container -->
+  <div class="atropos-scale">
+    <!-- Atropos wrapper -->
+    <div class="atropos-rotate">
+      <!-- Atropos inner structure with parallax elements -->
+      <div class="atropos-inner project-card">
+        <!-- Optional: background with data-atropos-offset -->
+        <div class="project-card-bg" data-atropos-offset="-4"></div>
+
+        <!-- Content with different offset values for 3D effect -->
+        <h3 data-atropos-offset="5">{{ title() }}</h3>
+
+        <div data-atropos-offset="3">
+          <p>{{ description() }}</p>
+        </div>
+
+        <div class="tools" data-atropos-offset="4">
+          @for (tool of tools(); track tool) {
+          <span class="badge">{{ tool }}</span>
+          }
+        </div>
+
+        <div class="links" data-atropos-offset="5">
+          @if (githubUrl()) {
+          <a href="{{ githubUrl() }}" target="_blank">GitHub</a>
+          } @if (demoUrl()) {
+          <a href="{{ demoUrl() }}" target="_blank">Demo</a>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
