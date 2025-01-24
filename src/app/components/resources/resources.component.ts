@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
 interface Resource {
   title: string;
@@ -14,23 +15,28 @@ interface Resource {
 @Component({
   selector: 'app-resources',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslocoModule],
   templateUrl: './resources.component.html',
   styleUrls: ['./resources.component.scss']
 })
-export class ResourcesComponent {
+export class ResourcesComponent implements OnInit {
+  constructor(private readonly translocoService: TranslocoService) {}
+  
+    ngOnInit() {
+      this.translocoService.setActiveLang('en');
+    }
   learningPlatforms: Resource[] = [
     {
-      title: 'Web programming bootcamp',
-      description: 'Online courses in web development and programming.',
+      title: 'LEARNING_PATH.BOOTCAMP_TITLE',
+      description: 'LEARNING_PATH.BOOTCAMP_DESC',
       link: 'https://adalab.es/',
       icon: 'assets/images/laptop-code-solid.svg',
       academy: 'Adalab',
       category: 'Learning Platforms'
     },
     {
-      title: 'Angular from 0 to expert',
-      description: 'Angular fundamentals and architectures.',
+      title: 'LEARNING_PATH.ANGULAR_TITLE',
+      description: 'LEARNING_PATH.ANGULAR_DESC',
       link: 'https://www.udemy.com/course/angular-fernando-herrera/',
       icon: 'assets/images/laptop-code-solid.svg',
       academy: 'Udemy',
@@ -40,8 +46,8 @@ export class ResourcesComponent {
 
   practiceResources: Resource[] = [
     {
-      title: 'Cofana Labs',
-      description: 'Real-world frontend challenges and projects.',
+      title: 'LEARNING_PATH.COMPANY',
+      description: 'LEARNING_PATH.COMPANY_DESC',
       link: 'https://www.linkedin.com/company/cofana-labs/',
       image: 'assets/images/cofanalabs.png',
       category: 'Practice'
