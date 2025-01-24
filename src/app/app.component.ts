@@ -7,7 +7,6 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { ResourcesComponent } from './components/resources/resources.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { TipsComponent } from './components/tips/tips.component';
-import { TranslocoHttpLoader } from './transloco-loader';
 
 @Component({
   selector: 'app-root',
