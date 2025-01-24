@@ -1,14 +1,21 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslocoHttpLoader } from '../../transloco-loader';
+import { AvailableLangs, TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslocoModule],
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss'],
+  providers: [TranslocoHttpLoader],
 })
 export class SkillsComponent {
+  availableLangs!: AvailableLangs;
+    selectedLang!: string;
+
+  
   skills = [
     { name: 'JavaScript', icon: 'javascript.svg' },
     { name: 'TypeScript', icon: 'typescript.svg' },
