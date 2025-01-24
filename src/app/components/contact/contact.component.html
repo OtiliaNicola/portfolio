@@ -13,7 +13,7 @@
 
     <div class="row text-center py-4">
       <div class="col-sm-12">
-        <span class="pills">Contact me</span>
+        <span class="pills">{{ 'CONTACT.TITLE' | transloco }}</span>
       </div>
     </div>
 
@@ -28,7 +28,7 @@
             <input
               type="text"
               formControlName="name"
-              placeholder="Nombre"
+              placeholder="{{ 'CONTACT.NAME' | transloco }}"
               [class.is-invalid]="
                 contactForm.get('name')?.invalid &&
                 contactForm.get('name')?.touched

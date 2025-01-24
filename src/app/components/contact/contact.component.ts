@@ -10,11 +10,12 @@ import {
 import { ToastrService } from 'ngx-toastr';
 import { send } from '@emailjs/browser';
 import { ContactInfo } from '../../core/interfaces/contact-info.interface';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, TranslocoModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })
