@@ -12,7 +12,7 @@
     ></div>
     <div class="row text-center py-4">
       <div class="col-sm-12">
-        <span class="pills">Projects</span>
+        <span class="pills">{{ 'PROJECTS.TITLE' | transloco }}</span>
       </div>
     </div>
     <!-- Grid de proyectos -->
@@ -20,11 +20,10 @@
       @for (project of projects; track project.title; let i = $index) {
       <app-project-card
         class="myAtropos_{{ i }}"
-        [title]="project.title"
+        [title]="project.title | transloco"
         [badgeColors]="project.badgeColors"
         [tools]="project.tools"
-        [myRole]="project.myRole"
-        [description]="project.description"
+        [description]="project.description | transloco"
         [githubUrl]="project.githubUrl"
         [demoUrl]="project.demoUrl"
       >
@@ -38,7 +37,7 @@
         target="_blank"
       >
         <button class="btn py-3">
-          VIEW MORE
+          {{ 'PROJECTS.VIEW_MORE' | transloco }}
           <img src="assets/images/icons/arrow-right.svg" alt="" class="mb-1" />
         </button>
       </a>
