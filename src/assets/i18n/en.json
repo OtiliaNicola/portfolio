@@ -1,15 +1,63 @@
 {
   "NAV": {
-    "SKILLS": "Skillsff",
-    "PROJECTS": "Projects",
-    "LEARNING_PATH": "My Learning Path",
-    "TIPS": "Tips",
-    "CONTACT": "Contact Me"
+    "SKILLS": "SKILLS",
+    "PROJECTS": "PROJECTS",
+    "LEARNING_PATH": "MY LEARNING PATH",
+    "TIPS": "TIPS",
+    "CONTACT": "CONTACT"
   },
   "HOME": {
-    "TITLE": "Hello, I'm a Junior Front-end Developer",
-    "DESCRIPTION": "I currently collaborate as a freelancer for a StartUp...",
+    "TITLE": "Hello,",
+    "TITLE1": "I'm a",
+    "TITLE2": "Junior Front-end Developer",
+    "DESCRIPTION": "I'm currently freelancing for a StartUp, focusing on development, debugging, testing and layout. I have good skills in HTML5, CSS3, TypeScript and JavaScript, as well as experience with Bootstrap and Node.js. I stand out for my analytical skills and my commitment to innovative solutions.",
     "CONTACT_BTN": "CONTACT ME",
     "DOWNLOAD_CV": "DOWNLOAD CV"
+  },
+  "SKILLS": {
+    "TITLE": "Skills"
+  },
+  "PROJECTS": {
+    "TITLE": "Projects",
+    "CALCULATOR": "Calculator",
+    "DESC_CALCULATOR": "This GitHub repository contains a calculator made with HTML, CSS and JavaScript.",
+    "TASKNEST": "TaskNest",
+    "DESC_TASKNEST": "TaskNest is a task management web application developed with Angular.",
+    "GIFS_ANGULAR": "Gifs Angular",
+    "DESC_GIFS_ANGULAR": "Gifs application from my Angular course.",
+    "VIEW_MORE": "VIEW MORE"
+  },
+  "LEARNING_PATH": {
+    "TITLE": "My Learning Path",
+    "SUBTITLE_LEARN": "Recent studies",
+    "BOOTCAMP_TITLE": "Web programming bootcamp",
+    "BOOTCAMP_DESC": "Online course in web development and programming.",
+    "ANGULAR_TITLE": "Angular from 0 to expert",
+    "ANGULAR_DESC": "Angular fundamentals and architectures.",
+    "SUBTITLE_PRACTICE": "Work",
+    "COMPANY": "Cofana Labs",
+    "COMPANY_DESC": "Freelance work for a StartUp.",
+    "VIEW_RES": "VIEW RESOURCE"
+  },
+  "TIPS": {
+    "TITLE": "Tips",
+    "DESCRIPTION": "Here are some tips that I have learned and that I consider important. Click on the image to see more details.",
+    "VIEW": "VIEW MORE"
+  },
+  "CONTACT": {
+    "TITLE": "Contact",
+    "NAME": "Name",
+    "NAME_FEEDBACK": "Enter your name.",
+    "EMAIL": "Email",
+    "EMAIL-FEEDBACK": "Please enter a valid email address.",
+    "SUBJECT": "Subject.",
+    "SUBJECT-FEEDBACK": "The subject is required.",
+    "MESSAGE": "Write here...",
+    "MESSAGE-FEEDBACK": "The matter is required",
+    "SENDING": "Sending...",
+    "SEND": "SEND"
+  },
+  "FOOTER": {
+    "TEXT_FOOTER": "𝔻𝕖𝕤𝕚𝕘𝕟𝕖𝕕 & 𝔻𝕖𝕧𝕖𝕝𝕠𝕡𝕖𝕕 by Otilia Nicola"
   }
 }

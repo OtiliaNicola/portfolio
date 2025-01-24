@@ -1,15 +1,63 @@
 {
   "NAV": {
-    "SKILLS": "Habilidades",
-    "PROJECTS": "Proyectos",
-    "LEARNING_PATH": "Mi Ruta de Aprendizaje",
-    "TIPS": "Consejos",
-    "CONTACT": "Contacto"
+    "SKILLS": "HABILIDADES",
+    "PROJECTS": "PROYECTOS",
+    "LEARNING_PATH": "MI RUTA DE APRENDIZAJE",
+    "TIPS": "TIPS",
+    "CONTACT": "CONTACTO"
   },
   "HOME": {
-    "TITLE": "Hola, Soy Desarrolladora Front-end Junior",
-    "DESCRIPTION": "Actualmente colaboro como freelancer para una StartUp...",
+    "TITLE": "Hola,",
+    "TITLE1": "Soy",
+    "TITLE2": "Desarrolladora Front-end Junior",
+    "DESCRIPTION": "Actualmente colaboro como freelance para una StartUp, centrándome en desarrollo, depuración, pruebas y maquetación. Tengo buenas habilidades en HTML5, CSS3, TypeScript y JavaScript, así como experiencia con Bootstrap y Node.js. Me destaco por mi capacidad analítica y mi compromiso con soluciones innovadoras.",
     "CONTACT_BTN": "CONTÁCTAME",
     "DOWNLOAD_CV": "DESCARGAR CV"
+  },
+  "SKILLS": {
+    "TITLE": "Habilidades"
+  },
+  "PROJECTS": {
+    "TITLE": "Proyectos",
+    "CALCULATOR": "Calculadora",
+    "DESC_CALCULATOR": "Este repositorio de GitHub contiene una calculadora hecha con HTML, CSS y JavaScript.",
+    "TASKNEST": "TaskNest",
+    "DESC_TASKNEST": "TaskNest es una aplicación web de gestión de tareas desarrollada con Angular.",
+    "GIFS_ANGULAR": "Gifs Angular",
+    "DESC_GIFS_ANGULAR": "Gifs aplicación de mi curso de Angular.",
+    "VIEW_MORE": "VER MÁS"
+  },
+  "LEARNING_PATH": {
+    "TITLE": "Mi ruta de aprendizaje",
+    "SUBTITLE_LEARN": "Estudios recientes",
+    "BOOTCAMP_TITLE": "Bootcamp de programación web",
+    "BOOTCAMP_DESC": "Curso online de desarrollo y programación web.",
+    "ANGULAR_TITLE": "Angular de cero a experto",
+    "ANGULAR_DESC": "Fundamentos y arquitecturas de Angular.",
+    "SUBTITLE_PRACTICE": "Puesto Freelance",
+    "COMPANY": "Cofana Labs",
+    "COMPANY_DESC": "Trabajo freelance para una StartUp.",
+    "VIEW_RES": "VER RECURSO"
+  },
+  "TIPS": {
+    "TITLE": "Consejos",
+    "DESCRIPTION": "",
+    "VIEW": "VER MÁS"
+  },
+  "CONTACT": {
+    "TITLE": "Contacto",
+    "NAME": "Nombre",
+    "NAME_FEEDBACK": "Introduce tu nombre.",
+    "EMAIL": "Correo electrónico",
+    "EMAIL-FEEDBACK": "Por favor, introduce un email válido.",
+    "SUBJECT": "Asunto.",
+    "SUBJECT-FEEDBACK": "El asunto es requerido.",
+    "MESSAGE": "Escribe aquí...",
+    "MESSAGE-FEEDBACK": "El asunto es requerido.",
+    "SENDING": "Sending...",
+    "SEND": "Enviar"
+  },
+  "FOOTER": {
+    "TEXT_FOOTER": "𝔻𝕖𝕤𝕚𝕘𝕟𝕖𝕕 & 𝔻𝕖𝕧𝕖𝕝𝕠𝕡𝕖𝕕 by Otilia Nicola"
   }
 }
