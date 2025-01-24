@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, input } from '@angular/core';
-import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
+import { AvailableLangs, LangDefinition, TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import JSConfetti from 'js-confetti';
+import { TranslocoHttpLoader } from '../../transloco-loader';
 
 @Component({
   selector: 'app-homepage',
@@ -9,18 +10,25 @@ import JSConfetti from 'js-confetti';
   imports: [CommonModule, TranslocoModule],
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
+  providers: [TranslocoHttpLoader],
 })
 export class HomePageComponent {
   title = input<string>();
   isNavOpen = false;
   private jsConfetti: JSConfetti;
+  availableLangs!: AvailableLangs;
+  selectedLang!: string;
 
   constructor(private readonly translocoService: TranslocoService) {
-    console.log(translocoService.getTranslation('en'));
-    console.log(translocoService.translate('NAV.SKILLS'));
-    
+    this.availableLangs = translocoService.getAvailableLangs();
+    this.selectedLang = translocoService.getActiveLang();
     
     this.jsConfetti = new JSConfetti();
+  }
+
+  changeLang(lang: string | LangDefinition) {
+    this.translocoService.setActiveLang(lang as string);
+    this.selectedLang = this.translocoService.getActiveLang();
   }
 
   toggleNav() {

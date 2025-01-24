@@ -1,5 +1,5 @@
 <div class="background-container">
-  <div class="nav">
+  <div>
     <div class="container navbar">
       <a class="nav-heading">OTILIA NICOLA</a>
       <div class="nav-toggle" (click)="toggleNav()">
@@ -11,17 +11,29 @@
         </li>
         <li><a href="#skills" (click)="closeNav()">{{ 'NAV.SKILLS' | transloco }}</a></li>
         <li><a href="#projects" (click)="closeNav()">{{ 'NAV.PROJECTS' | transloco }}</a></li>
-        <li><a href="#resources" (click)="closeNav()">MY LEARNING PATH</a></li>
-        <li><a href="#tips" (click)="closeNav()">TIPS</a></li>
-        <li><a href="#contact" (click)="closeNav()">CONTACT US</a></li>
+        <li><a href="#resources" (click)="closeNav()">{{ 'NAV.LEARNING_PATH' | transloco }}</a></li>
+        <li><a href="#tips" (click)="closeNav()">{{ 'NAV.TIPS' | transloco }}</a></li>
+        <li><a href="#contact" (click)="closeNav()">{{ 'NAV.CONTACT' | transloco }}</a></li>
       </ul>
-      <ul class="horizontal-nav">
-        <li><a href="#skills">SKILLS</a></li>
-        <li><a href="#projects">PROJECTS</a></li>
-        <li><a href="#resources">MY LEARNING PATH</a></li>
-        <li><a href="#tips">TIPS</a></li>
-        <li><a href="#contact">CONTACT ME</a></li>
+      <div class="d-none d-md-block ms-auto">
+      <ul class="navbar-nav custom-nav d-flex flex-row align-items-center gap-4">
+        <li class="nav-item"><a class="nav-link custom-link" href="#skills">{{ 'NAV.SKILLS' | transloco }}</a></li>
+        <li class="nav-item"><a class="nav-link custom-link" href="#projects">{{ 'NAV.PROJECTS' | transloco }}</a></li>
+        <li class="nav-item"><a class="nav-link custom-link" href="#resources">{{ 'NAV.LEARNING_PATH' | transloco }}</a></li>
+        <li class="nav-item"><a class="nav-link custom-link" href="#tips">{{ 'NAV.TIPS' | transloco }}</a></li>
+        <li class="nav-item"><a class="nav-link custom-link" href="#contact">{{ 'NAV.CONTACT' | transloco }}</a></li>
+        <li class="nav-item dropdown custom-link">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{selectedLang}}
+          </a>
+          <ul class="dropdown-menu">
+            @for (lang of availableLangs; track $index) {
+              <li><a class="dropdown-item" (click)="changeLang(lang)">{{lang}}</a></li>
+            }
+          </ul>
+        </li>
       </ul>
+    </div>
     </div>
   </div>
 
@@ -31,16 +43,12 @@
         <div class="col-sm-12 col-md-12 col-lg-6 order-2 order-lg-1">
           <div class="hero-section my-lg-5">
             <h1>
-              Hello,<br />
-              I'm a
-              <span style="color: #16f2b3">Junior Front-end Developer</span>.
+              {{ 'HOME.TITLE' | transloco }}<br />
+              {{ 'HOME.TITLE1' | transloco }}
+              <span style="color: #16f2b3">{{ 'HOME.TITLE2' | transloco }}</span>.
             </h1>
             <p>
-              I currently collaborate as a freelancer for a StartUp, focusing on
-              development, debugging, testing and layout. I have good skills in
-              HTML5, CSS3, TypeScript and JavaScript, as well as experience with
-              Bootstrap and Node.js. I am proactive, persistent and creative
-              problem solver.
+              {{ 'HOME.DESCRIPTION' | transloco }}
             </p>
             <div class="social-icon py-2">
               <a
@@ -64,12 +72,12 @@
             <div class="hero-button py-3">
               <a href="#contact" class="mx-2">
                 <button class="btn py-3">
-                  CONTACT ME
+                  {{ 'HOME.CONTACT_BTN' | transloco }}
                   <img src="assets/images/icons/user.svg" alt="" class="mb-1" />
                 </button>
               </a>
                 <button class="btn2 py-3 mx-2" (click)="downloadCv()">
-                  DOWNLOAD CV
+                  {{ 'HOME.DOWNLOAD_CV' | transloco }}
                   <img src="assets/images/icons/download.svg" alt="" />
                 </button>
             </div>
