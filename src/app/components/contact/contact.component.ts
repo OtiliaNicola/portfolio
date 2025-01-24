@@ -7,15 +7,15 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { ToastrService } from 'ngx-toastr';
-import { send } from '@emailjs/browser';
-import { ContactInfo } from '../../core/interfaces/contact-info.interface';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { init, send } from '@emailjs/browser';
 import { TranslocoModule } from '@jsverse/transloco';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, TranslocoModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, TranslocoModule, ToastrModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })
@@ -26,34 +26,8 @@ export class ContactComponent {
   contactForm: FormGroup;
   isSubmitting = false;
 
-  contactInfo: ContactInfo[] = [
-    {
-      icon: 'mail.svg',
-      text: 'otilianicola94@gmail.com',
-      link: 'mailto:otilianicola94@gmail.com',
-    },
-    {
-      icon: 'map.svg',
-      text: 'Madrid, España',
-    },
-    {
-      icon: 'git.svg',
-      text: 'GitHub',
-      link: 'https://github.com/otilianicola',
-    },
-    {
-      icon: 'linkdin.svg',
-      text: 'Linkedin',
-      link: 'https://linkedin.com/in/otilianicola',
-    },
-    {
-      icon: 'x.svg',
-      text: 'X',
-      link: 'https://x.com/OtiliaNicola',
-    },
-  ];
-
   constructor() {
+    init(environment.emailjs.publicKey);
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -61,26 +35,31 @@ export class ContactComponent {
       message: ['', Validators.required],
     });
   }
-
   async onSubmit() {
     if (this.contactForm.valid) {
+      this.isSubmitting = true;
       try {
-        await send(
-          'YOUR_SERVICE_ID',
-          'YOUR_TEMPLATE_ID',
+        await send(environment.emailjs.serviceId,
+          environment.emailjs.templateId,
           {
             from_name: this.contactForm.value.name,
             from_email: this.contactForm.value.email,
             message: this.contactForm.value.message,
           },
-          'YOUR_PUBLIC_KEY'
-        );
-
-        this.toastr.success('Mensaje enviado correctamente!');
+          environment.emailjs.publicKey);
+          this.toastr.success('¡Gracias por tu mensaje! Te responderé lo antes posible.', '¡Mensaje enviado!', {
+            timeOut: 3000,
+            progressBar: true,
+            closeButton: true
+          });
         this.contactForm.reset();
       } catch (error) {
-        this.toastr.error('Error al enviar el mensaje.');
+        this.toastr.error('Por favor, inténtalo de nuevo más tarde.', 'Error al enviar', {
+          timeOut: 3000
+        });
         console.error(error);
+      } finally {
+        this.isSubmitting = false;
       }
     }
   }

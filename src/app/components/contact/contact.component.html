@@ -13,7 +13,7 @@
 
     <div class="row text-center py-4">
       <div class="col-sm-12">
-        <span class="pills">{{ 'CONTACT.TITLE' | transloco }}</span>
+        <span class="pills">{{ "CONTACT.TITLE" | transloco }}</span>
       </div>
     </div>
 
@@ -106,44 +106,36 @@
         </form>
       </div>
 
-      <div class="col-sm-12 col-md-12 col-lg-6 p-md-5">
-        <div class="details">
-          @for (info of contactInfo; track info.text) { @if (info.icon ===
-          'mail.svg') {
-          <div class="email">
-            <img
-              [src]="'assets/images/icons/' + info.icon"
-              alt="email"
-              class="img-fluid"
-            />
-            <span>{{ info.text }}</span>
+      <!-- <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p>Formulario completo: { {{ contactForm.value | json }} }</p>
           </div>
-          } @else if (info.icon === 'map.svg') {
-          <div class="address">
-            <img
-              [src]="'assets/images/icons/' + info.icon"
-              alt="location"
-              class="img-fluid"
-            />
-            <span>{{ info.text }}</span>
+        </div>
+      
+        <div class="row">
+          <div class="col-md-6">
+            <h4>Valores</h4>
+            <p>Nombre:  {{ contactForm.get('name')?.value }} </p>
+            <p>Email:  {{ contactForm.get('email')?.value }} </p>
+            <p>Asunto:  {{ contactForm.get('subject')?.value }} </p>
+            <p>Mensaje:  {{ contactForm.get('message')?.value }} </p>
           </div>
-          } }
-
-          <div class="social-icon text-center">
-            @for (info of contactInfo; track info.text) { @if (info.icon ===
-            'git.svg' || info.icon === 'linkdin.svg' || info.icon === 'x.svg') {
-            <a [href]="info.link" target="_blank">
-              <img
-                [src]="'assets/images/icons/' + info.icon"
-                [alt]="info.text"
-                class="img-fluid"
-              />
-            </a>
-            } }
+      
+          <div class="col-md-6">
+            <h4>Errores</h4>
+            <p>Nombre válido:  {{ contactForm.get('name')?.valid }} </p>
+            <p>Errores nombre:  {{ contactForm.get('name')?.errors | json }} </p>
+            <p>Email válido: {{ contactForm.get('email')?.valid }} </p>  
+            <p>Errores email: {{ contactForm.get('email')?.errors | json }} </p>
+            <p>Asunto válido: {{ contactForm.get('subject')?.valid }} </p>
+            <p>Errores asunto: {{ contactForm.get('subject')?.errors | json }} </p>
+            <p>Mensaje válido: {{ contactForm.get('message')?.valid }} </p>
+            <p>Errores mensaje: {{ contactForm.get('message')?.errors | json }} </p>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="container-fluid">
       <div
