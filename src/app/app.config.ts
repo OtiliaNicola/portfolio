@@ -6,9 +6,10 @@ import { provideToastr } from 'ngx-toastr';
 import { provideHttpClient } from '@angular/common/http';
 import { provideTransloco } from '@jsverse/transloco';
 import { TranslocoHttpLoader } from './transloco-loader';
+import { ReactiveFormsModule } from '@angular/forms';
 
 export const appConfig: ApplicationConfig = {
-providers: [provideRouter(routes), provideAnimations(), provideToastr({
+providers: [provideRouter(routes), provideAnimations(), ReactiveFormsModule, provideToastr({
   timeOut: 3000,
   positionClass: 'toast-top-right',
   preventDuplicates: true

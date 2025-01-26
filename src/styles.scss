@@ -42,25 +42,6 @@ body {
   color: white;
 }
 
-.line {
-  background: #1A1443;
-  height: 2px;
-  width: 20%;
-  margin: -25px auto 0;
-}
-
-.blur {
-  width: 6vw;
-  height: 6vw;
-  background-color: #E9D8FD;
-  border-radius: 50%;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  filter: blur(6vw);
-  margin-top: 10px;
-}
-
 .btn {
   height: 55px;
   width: 180px;
@@ -92,5 +73,55 @@ body {
     height: 60px;
     width: 185px;
     background: linear-gradient(17deg, rgba(220, 31, 255, 1) 7%, rgba(0, 255, 163, 1) 100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px;
+    
+    .nav-heading {
+      font-size: 24px;
+    }
+  }
+
+  .hero-section {
+    text-align: center;
+    padding: 20px;
+    
+    h1 {
+      font-size: 2rem;
+    }
+    
+    .hero-button {
+      flex-direction: column;
+      gap: 1rem;
+      
+      .btn, .btn2 {
+        width: 100%;
+      }
+    }
+  }
+
+  .profile-image img {
+    max-width: 250px;
+  }
+
+  .contact-form {
+    padding: 1rem;
+    
+    .btn {
+      width: 100%;
+    }
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 }
