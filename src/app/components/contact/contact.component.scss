@@ -114,6 +114,18 @@
     border-radius: 4px;
     overflow-x: auto;
   }
+
+}
+@media (min-width: 320px) and (max-width: 770.98px) {
+  .contact-form, .code-preview{
+    margin-bottom: 1rem;
+  }
+  .btn{
+    width: auto; 
+    min-width: 120px;
+    font-size: 0.7em;
+    padding: 0.3em 0.6em;
+  }
 }
 
 @media (max-width: 768px) {

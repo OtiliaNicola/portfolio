@@ -87,6 +87,12 @@
   }
 }
 
+@media (min-width: 320px) and (max-width: 770.98px) {
+  .project-card {
+    min-height: 350px;
+  }
+}
+
 @media (max-width: 768px) {
   .project-card {
     .links {
