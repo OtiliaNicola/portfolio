@@ -48,19 +48,26 @@ export class ContactComponent {
           },
           environment.emailjs.publicKey);
           this.toastr.success('¡Gracias por tu mensaje! Te responderé lo antes posible.', '¡Mensaje enviado!', {
-            timeOut: 3000,
+            timeOut: 2000,
             progressBar: true,
             closeButton: true
           });
         this.contactForm.reset();
       } catch (error) {
         this.toastr.error('Por favor, inténtalo de nuevo más tarde.', 'Error al enviar', {
-          timeOut: 3000
+          timeOut: 2000
         });
         console.error(error);
       } finally {
         this.isSubmitting = false;
       }
     }
+  }
+  get formStatus() {
+    return {
+      valid: this.contactForm.valid,
+      touched: this.contactForm.touched,
+      errors: this.contactForm.errors,
+    };
   }
 }
