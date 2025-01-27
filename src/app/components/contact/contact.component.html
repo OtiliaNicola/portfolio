@@ -36,7 +36,7 @@
             />
             @if (contactForm.get('name')?.invalid &&
             contactForm.get('name')?.touched) {
-            <div class="invalid-feedback">Introduce tu nombre.</div>
+            <div class="invalid-feedback">{{ 'CONTACT.NAME_FEEDBACK' | transloco }}</div>
             }
           </div>
 
@@ -44,7 +44,7 @@
             <input
               type="email"
               formControlName="email"
-              placeholder="Email"
+              placeholder="{{ 'CONTACT.EMAIL' | transloco }}"
               [class.is-invalid]="
                 contactForm.get('email')?.invalid &&
                 contactForm.get('email')?.touched
@@ -53,7 +53,7 @@
             @if (contactForm.get('email')?.invalid &&
             contactForm.get('email')?.touched) {
             <div class="invalid-feedback">
-              Por favor, introduce un email válido.
+              {{ 'CONTACT.EMAIL_FEEDBACK' | transloco }}
             </div>
             }
           </div>
@@ -62,7 +62,7 @@
             <input
               type="text"
               formControlName="subject"
-              placeholder="Asunto"
+              placeholder="{{ 'CONTACT.SUBJECT' | transloco }}"
               [class.is-invalid]="
                 contactForm.get('subject')?.invalid &&
                 contactForm.get('subject')?.touched
@@ -70,14 +70,14 @@
             />
             @if (contactForm.get('subject')?.invalid &&
             contactForm.get('subject')?.touched) {
-            <div class="invalid-feedback">El asunto es requerido</div>
+            <div class="invalid-feedback">{{ 'CONTACT.SUBJECT_FEEDBACK' | transloco }}</div>
             }
           </div>
 
           <div class="form-group">
             <textarea
               formControlName="message"
-              placeholder="Escribe aquí..."
+              placeholder="{{ 'CONTACT.MESSAGE' | transloco }}"
               rows="5"
               [class.is-invalid]="
                 contactForm.get('message')?.invalid &&
@@ -87,7 +87,7 @@
             </textarea>
             @if (contactForm.get('message')?.invalid &&
             contactForm.get('message')?.touched) {
-            <div class="invalid-feedback">El mensaje es requerido.</div>
+            <div class="invalid-feedback">{{ 'CONTACT.MESSAGE_FEEDBACK' | transloco }}</div>
             }
           </div>
           <button
@@ -96,10 +96,10 @@
             [disabled]="contactForm.invalid || isSubmitting"
           >
             @if (isSubmitting) {
-            <span>Enviando...</span>
+            <span>{{ 'CONTACT.SENDING' | transloco }}</span>
             } @else {
             <span
-              >Enviar <img src="assets/images/icons/message.svg" alt="" />
+              >{{ 'CONTACT.SEND' | transloco }} <img src="assets/images/icons/message.svg" alt="" />
             </span>
             }
           </button>
@@ -133,10 +133,9 @@
           <div class="col-sm-12 col-md-12 col-lg-6">
             <div class="devloper-details">
               <div style="font-size: smaller; color: rgb(182, 182, 182)">
-                𝔻𝕖𝕤𝕚𝕘𝕟𝕖𝕕 &
-                 𝔻𝕖𝕧𝕖𝕝𝕠𝕡𝕖𝕕 by
-                <a href="https://www.linkedin.com/in/otilianicola/"
-                  ><span> Otilia Nicola</span>
+                <span [innerHtml]="'FOOTER.TEXT_FOOTER' | transloco"></span>
+                <a href="https://www.linkedin.com/in/otilianicola/">
+                  <span class="link-name">Otilia Nicola</span>
                 </a>
               </div>
             </div>

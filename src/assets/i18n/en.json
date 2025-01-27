@@ -49,15 +49,15 @@
     "NAME": "Name",
     "NAME_FEEDBACK": "Enter your name.",
     "EMAIL": "Email",
-    "EMAIL-FEEDBACK": "Please enter a valid email address.",
+    "EMAIL_FEEDBACK": "Please enter a valid email address.",
     "SUBJECT": "Subject.",
-    "SUBJECT-FEEDBACK": "The subject is required.",
+    "SUBJECT_FEEDBACK": "The subject is required.",
     "MESSAGE": "Write here...",
-    "MESSAGE-FEEDBACK": "The matter is required",
+    "MESSAGE_FEEDBACK": "The matter is required",
     "SENDING": "Sending...",
     "SEND": "SEND"
   },
   "FOOTER": {
-    "TEXT_FOOTER": "𝔻𝕖𝕤𝕚𝕘𝕟𝕖𝕕 & 𝔻𝕖𝕧𝕖𝕝𝕠𝕡𝕖𝕕 by Otilia Nicola"
+    "TEXT_FOOTER": "&copy; 2025 Made with <span class='heart'>&hearts;</span> by "
   }
 }
