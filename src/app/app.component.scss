@@ -1,0 +1,58 @@
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+  }
+  
+  .floating-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    pointer-events: all; /* Permite que el botón sea interactivo */
+  }
+  
+  .floating-btn svg {
+    width: 70px;  /* Aumentamos el tamaño del SVG */
+    height: 70px; /* Aumentamos el tamaño del SVG */
+    fill: url(#grad1); /* Aplicamos el gradiente */
+    transition: fill 0.3s ease;
+    animation: blink 1.3s infinite ; /* Animación de parpadeo */
+  }
+  
+  /* Animación de parpadeo */
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5; /* Reduce la opacidad al 50% */
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Animación para el efecto de "subir" y desaparecer */
+  .floating-btn.animate {
+    animation: floatUp 2s forwards; /* Aplica animación al hacer clic */
+  }
+  
+  /* Animación de "flotar hacia arriba" */
+  @keyframes floatUp {
+    0% {
+      opacity: 1;
+      transform: translateY(0); /* Posición inicial */
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-150px); /* Desplazamiento hacia arriba */
+    }
+  }
+  
+  /* Para el contenedor */
+  .back-to-top {
+    pointer-events: none; /* Evitar que el contenedor interfiera con la animación */
+  }
