@@ -17,7 +17,7 @@ import { TipsComponent } from './components/tips/tips.component';
     SkillsComponent,
     ProjectsComponent,
     ResourcesComponent,
-    TipsComponent,
+    // TipsComponent,
     ContactComponent,
     TranslocoModule
   ],

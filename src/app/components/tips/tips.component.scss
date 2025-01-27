@@ -1,0 +1,81 @@
+.learning-card {
+    max-height: 200px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease, color 0.3s ease;
+    border: none;
+    background-color: #2c2c2c; // Fondo oscuro para las tarjetas.
+    color: #ffffff; // Texto claro.
+  
+    &:hover {
+      background-color: #ffffff; // Fondo claro al pasar el cursor.
+      color: #000000; // Texto oscuro.
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+  
+    .icon-container {
+      text-align: center;
+      font-size: 2.5rem;
+  
+      i {
+        transition: transform 0.3s ease, color 0.3s ease;
+        color: #ffffff; // Iconos claros en el estado inicial.
+      }
+    }
+  
+    &:hover .icon-container i {
+      transform: scale(1.1);
+      color: #000000; // Iconos oscuros al pasar el cursor.
+    }
+  
+    .badge {
+      text-transform: uppercase;
+      font-size: 0.7rem; // Reducir el tamaño de los badges.
+      padding: 0.3rem 0.6rem;
+      border-radius: 0.2rem;
+    }
+  
+    .btn {
+      height: 30px; // Ajuste para que encaje con el tamaño de la tarjeta.
+      width: 70px;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.8rem;
+      border: none;
+      outline: none;
+      position: relative;
+      border-radius: 20px;
+      background: linear-gradient(17deg, rgba(0, 255, 163, 1) 7%, rgba(220, 31, 255, 1) 100%);
+      cursor: pointer;
+      z-index: 1;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+  
+      &::before {
+        content: "";
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+        background-color: #0d1224;
+        border-radius: 18px;
+        z-index: -1;
+      }
+  
+      &:hover {
+        height: 30px;
+        width: 70px;
+        background: linear-gradient(17deg, rgba(220, 31, 255, 1) 7%, rgba(0, 255, 163, 1) 100%);
+      }
+    }
+  
+    .card-text {
+      min-height: 50px;
+      color: #929292; // Texto ligeramente gris para el fondo oscuro.
+      font-size: 0.9rem;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap; // Esto asegura que el texto no se desborde.
+    }
+  }
+  
