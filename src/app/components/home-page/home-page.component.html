@@ -2,37 +2,50 @@
   <div>
     <div class="container navbar">
       <a class="nav-heading">OTILIA NICOLA</a>
-      <div class="nav-toggle" (click)="toggleNav()">
-        <i class="fa-solid fa-bars fa-2xl" style="color: #ffffff"></i>
+      <div class="menu-mobile d-none d-sm-none d-lg-block">
+        <ul class="navbar-nav  custom-nav d-flex flex-md-row flex-sm-column align-items-center gap-4 gap-sm-1">
+          <li class="nav-item"><a class="nav-link custom-link" href="#skills">{{ 'NAV.SKILLS' | transloco }}</a></li>
+          <li class="nav-item"><a class="nav-link custom-link" href="#projects">{{ 'NAV.PROJECTS' | transloco }}</a></li>
+          <li class="nav-item"><a class="nav-link custom-link" href="#resources">{{ 'NAV.LEARNING_PATH' | transloco }}</a></li>
+          <li class="nav-item"><a class="nav-link custom-link" href="#tips">{{ 'NAV.TIPS' | transloco }}</a></li>
+          <li class="nav-item"><a class="nav-link custom-link" href="#contact">{{ 'NAV.CONTACT' | transloco }}</a></li>
+          <li class="nav-item dropdown custom-link">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="onLangDropdownClick($event)">
+              {{selectedLang}}
+            </a>
+            <ul class="dropdown-menu">
+              @for (lang of availableLangs; track $index) {
+                <li><a class="dropdown-item" (click)="changeLang(lang)">{{lang}}</a></li>
+              }
+            </ul>
+          </li>
+        </ul>
       </div>
-      <ul class="nav-links" [class.open]="isNavOpen">
-        <li (click)="closeNav()" class="text-end">
-          <i class="fa-solid fa-xmark fa-2xl" style="color: #ffffff"></i>
-        </li>
-        <li><a href="#skills" (click)="closeNav()">{{ 'NAV.SKILLS' | transloco }}</a></li>
-        <li><a href="#projects" (click)="closeNav()">{{ 'NAV.PROJECTS' | transloco }}</a></li>
-        <li><a href="#resources" (click)="closeNav()">{{ 'NAV.LEARNING_PATH' | transloco }}</a></li>
-        <li><a href="#tips" (click)="closeNav()">{{ 'NAV.TIPS' | transloco }}</a></li>
-        <li><a href="#contact" (click)="closeNav()">{{ 'NAV.CONTACT' | transloco }}</a></li>
-      </ul>
-      <div class="d-none d-md-block ms-auto">
-      <ul class="navbar-nav custom-nav d-flex flex-row align-items-center gap-4">
-        <li class="nav-item"><a class="nav-link custom-link" href="#skills">{{ 'NAV.SKILLS' | transloco }}</a></li>
-        <li class="nav-item"><a class="nav-link custom-link" href="#projects">{{ 'NAV.PROJECTS' | transloco }}</a></li>
-        <li class="nav-item"><a class="nav-link custom-link" href="#resources">{{ 'NAV.LEARNING_PATH' | transloco }}</a></li>
-        <li class="nav-item"><a class="nav-link custom-link" href="#tips">{{ 'NAV.TIPS' | transloco }}</a></li>
-        <li class="nav-item"><a class="nav-link custom-link" href="#contact">{{ 'NAV.CONTACT' | transloco }}</a></li>
-        <li class="nav-item dropdown custom-link">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            {{selectedLang}}
-          </a>
-          <ul class="dropdown-menu">
-            @for (lang of availableLangs; track $index) {
-              <li><a class="dropdown-item" (click)="changeLang(lang)">{{lang}}</a></li>
-            }
+      <div class="d-nones d-lg-none ms-auto dropdown">
+        <button class="btn btn-secondary d-block d-sm-block d-md-block d-md-block d-lg-none dropdown-toggle p-0 btn-mobile" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+          </svg>
+        </button>
+        <div class="dropdown-menu menu-mobile">
+          <ul class="navbar-nav  custom-nav d-flex flex-md-row flex-sm-column align-items-center gap-4 gap-sm-1">
+            <li class="nav-item dropdown-item"><a class="nav-link custom-link" href="#skills">{{ 'NAV.SKILLS' | transloco }}</a></li>
+            <li class="nav-item dropdown-item"><a class="nav-link custom-link" href="#projects">{{ 'NAV.PROJECTS' | transloco }}</a></li>
+            <li class="nav-item dropdown-item"><a class="nav-link custom-link" href="#resources">{{ 'NAV.LEARNING_PATH' | transloco }}</a></li>
+            <li class="nav-item dropdown-item"><a class="nav-link custom-link" href="#tips">{{ 'NAV.TIPS' | transloco }}</a></li>
+            <li class="nav-item dropdown-item"><a class="nav-link custom-link" href="#contact">{{ 'NAV.CONTACT' | transloco }}</a></li>
+            <li class="nav-item dropdown custom-link dropdown-item">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="onLangDropdownClick($event)">
+                {{selectedLang}}
+              </a>
+              <ul class="dropdown-menu">
+                @for (lang of availableLangs; track $index) {
+                  <li><a class="dropdown-item" (click)="changeLang(lang)">{{lang}}</a></li>
+                }
+              </ul>
+            </li>
           </ul>
-        </li>
-      </ul>
+        </div>
     </div>
     </div>
   </div>

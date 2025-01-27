@@ -51,4 +51,8 @@ export class HomePageComponent {
       console.error('Error triggering confetti:', error);
     }
   }
+
+  onLangDropdownClick(event: MouseEvent): void {
+    event.stopPropagation(); // Evita que el clic cierre el menú principal
+}
 }
