@@ -42,8 +42,8 @@ export class HomePageComponent {
   async downloadCv() {
     try {
       const link = document.createElement('a');
-      link.href = 'assets/OtiliaNicolaResume.pdf';
-      link.download = 'OtiliaNicolaResume.pdf';
+      link.href = 'assets/Otilia-Nicola-CV.pdf';
+      link.download = 'Otilia-Nicola-CV.pdf';
       // Add your resume download logic here
       link.click();
       await this.jsConfetti.addConfetti({});
