@@ -75,7 +75,7 @@
       left: 50%;
       width: 0;
       height: 2px;
-      background-color: #ffffff;
+      background-color: #ec4899;
       transition: width 0.3s ease, left 0.3s ease;
       transform: translateX(-50%);
     }
@@ -253,6 +253,7 @@ canvas {
 
 @media (min-width: 320px) and (max-width: 770.98px) {
   .background-container {
+    width: 90%;
     top: 50%;
     background-size: 150vw;
   }
@@ -278,21 +279,21 @@ canvas {
   }
 
   .hero-button {
-    a{
-      width: 180px;
-      padding: 0;
-      margin: 0;
-      min-height: 55px;
-      &::before{
-        min-height: 55px;
-      }
-    }
-    .btn, .btn2{
-      width: auto; 
-      min-width: 120px;
-      font-size: 0.7em;
-      padding: 0.3em 0.6em;
-    }
+    // a{
+    //   width: 180px;
+    //   padding: 0;
+    //   margin: 0;
+    //   min-height: 55px;
+    //   &::before{
+    //     min-height: 55px;
+    //   }
+    // }
+    // .btn, .btn2{
+    //   width: auto; 
+    //   min-width: 120px;
+    //   font-size: 0.7em;
+    //   padding: 0.3em 0.6em;
+    // }
 
   }
   .about p {
