@@ -1,20 +1,19 @@
 // src/styles.scss
-@use 'bootstrap/dist/css/bootstrap.min.css';
 @use './theme/variables';
 @use './theme/reset';
-@use './theme/utilities';
+// @use './theme/utilities';
 
-// Componentes
-@forward 'app/components/home-page/home-page.component';
-@forward 'app/components/contact/contact.component';
-@forward 'app/components/skills/skills.component';
-@forward 'app/components/projects/projects.component';
-@forward 'app/components/resources/resources.component';
-@forward 'app/shared/project-card/project-card.component';
+// // Componentes
+// @forward 'app/components/home-page/home-page.component';
+// @forward 'app/components/contact/contact.component';
+// @forward 'app/components/skills/skills.component';
+// @forward 'app/components/projects/projects.component';
+// @forward 'app/components/resources/resources.component';
+// @forward 'app/shared/project-card/project-card.component';
 
 
 @use 'atropos/scss';
-@use 'ngx-toastr/toastr';
+//@use 'ngx-toastr/toastr';
 
 * {
   margin: 0;
