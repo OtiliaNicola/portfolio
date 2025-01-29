@@ -83,13 +83,11 @@
               </a>
             </div>
             <div class="hero-button py-3">
-              <a href="#contact" class="mx-2">
-                <button class="btn py-3">
+                <button class="btn py-3"  onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
                   {{ 'HOME.CONTACT_BTN' | transloco }}
-                  <img src="assets/images/icons/user.svg" alt="" class="mb-1" />
+                  <img src="assets/images/icons/user.svg" alt="" class="mb-1"/>
                 </button>
-              </a>
-                <button class="btn2 py-3 mx-2" (click)="downloadCv()">
+                <button class="btn2 py-3" (click)="downloadCv()">
                   {{ 'HOME.DOWNLOAD_CV' | transloco }}
                   <img src="assets/images/icons/download.svg" alt="" />
                 </button>
