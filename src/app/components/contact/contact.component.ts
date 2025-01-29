@@ -36,7 +36,18 @@ export class ContactComponent {
     });
   }
   async onSubmit() {
-    if (this.contactForm.valid) {
+    if (this.contactForm.invalid) {
+      this.toastr.error('Por favor, rellena todos los campos requeridos', 'Formulario incompleto', {
+        timeOut: 3000,
+        progressBar: true,
+        closeButton: true
+      });
+      Object.keys(this.contactForm.controls).forEach(key => {
+        const control = this.contactForm.get(key);
+        control?.markAsTouched();
+      });
+      return;  // Detener la ejecución si el formulario es inválido
+    }
       this.isSubmitting = true;
       try {
         await send(environment.emailjs.serviceId,
@@ -61,7 +72,7 @@ export class ContactComponent {
       } finally {
         this.isSubmitting = false;
       }
-    }
+    
   }
   get formStatus() {
     return {

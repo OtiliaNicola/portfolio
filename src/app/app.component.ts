@@ -25,7 +25,7 @@ import { TipsComponent } from './components/tips/tips.component';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  showButton = false; // Para controlar la visibilidad del botón
+  showButton = false;
   title = 'portfolio';
   constructor(private translocoService: TranslocoService) {}
 
@@ -37,25 +37,24 @@ export class AppComponent {
   onScroll(): void {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     if (scrollTop > 0) {
-      this.showButton = true; // Mostrar el botón cuando se desplaza
+      this.showButton = true;
     } else {
-      this.showButton = false; // Ocultar el botón si estamos en la parte superior
+      this.showButton = false;
     }
   }
   
   scrollToTop() {
-    // Animación para que el globo "suba"
+    
     const button = document.querySelector('.floating-btn') as HTMLElement;
     if (button) {
-      button.classList.add('animate'); // Añadir la animación
+      button.classList.add('animate'); 
     }
 
-    // Desplazar la página hacia arriba
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // Ocultar el botón después de la animación
+
     setTimeout(() => {
       this.showButton = false;
-    }, 2000); // El tiempo debe coincidir con la duración de la animación
+    }, 2000);
   }
 }
