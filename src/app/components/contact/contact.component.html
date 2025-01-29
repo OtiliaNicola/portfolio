@@ -93,7 +93,7 @@
           <button
             type="submit"
             class="btn py-3 text-center"
-            [disabled]="contactForm.invalid || isSubmitting"
+            [disabled]="isSubmitting"
           >
             @if (isSubmitting) {
             <span>{{ 'CONTACT.SENDING' | transloco }}</span>
