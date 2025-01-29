@@ -17,7 +17,7 @@
 .btn {
   height: 55px;
   width: 180px;
-  padding: 20px;
+  // padding: 20px;
   border: none;
   outline: none;
   position: relative;
@@ -61,6 +61,17 @@
 
   &:hover::after {
     color: white;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 770.98px) {
+  .hero-button{
+    a{
+      width: 80%;   
+      .btn{
+        width: 100%;
+      }    
+    }
   }
 }
 
