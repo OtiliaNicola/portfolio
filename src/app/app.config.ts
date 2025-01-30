@@ -7,6 +7,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideTransloco } from '@jsverse/transloco';
 import { TranslocoHttpLoader } from './transloco-loader';
 import { ReactiveFormsModule } from '@angular/forms';
+import { provideServiceWorker } from '@angular/service-worker';
 
 export const appConfig: ApplicationConfig = {
 providers: [provideRouter(routes), provideAnimations(), ReactiveFormsModule, provideToastr({
@@ -23,5 +24,8 @@ providers: [provideRouter(routes), provideAnimations(), ReactiveFormsModule, pro
           prodMode: !isDevMode(),
         },
         loader: TranslocoHttpLoader
-      })],
+      }), provideServiceWorker('ngsw-worker.js', {
+            enabled: !isDevMode(),
+            registrationStrategy: 'registerWhenStable:30000'
+          })],
 };
