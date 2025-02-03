@@ -1,11 +1,11 @@
 {
-  "name": "portfolio",
-  "short_name": "portfolio",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "name": "Portfolio",
+  "short_name": "Portfolio",
+  "theme_color": "#0d1224",
+  "background_color": "#0d1224",
   "display": "standalone",
   "scope": "./",
-  "start_url": "/",
+  "start_url": "./",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
