@@ -1,7 +1,7 @@
 # Portfolio 🎨  
 This is my personal portfolio built with **Angular 19.1.1**, showcasing my skills as a **Front-End Developer**.  
 
-## 🧑‍💻 About Me  
+## 👩‍💻 About Me  
 Hi! I’m **Otilia Nicola**, a **Junior Front-End Developer** passionate about web development and creating interactive digital experiences.  
 I specialize in **HTML5, CSS3, JavaScript, TypeScript, Angular**, and **IonicFramework**. I love continuous learning, taking on new challenges, and improving my skills.  
 
@@ -16,7 +16,7 @@ Currently, I work as a freelance developer at a startup, focusing on development
 - **Confetti.js** (Confetti animations)  
 
 ## 🌐 Live Demo  
-Check it out here: [**My Portfolio**](https://otilianicola.github.io/portfolio)  
+Check it out here: [**My Portfolio**](https://portfolio-otilia-nicola.vercel.app/)  
 
 ## ⚙️ Development Instructions  
 To run this project locally:  
